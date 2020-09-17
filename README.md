@@ -8,7 +8,7 @@ Main implementation of variable-width beam searches is in `variable_stream.py`.
 
 We use Fairseq's MT checkpoints. test.py loads and caches them to run inference. 
 
-Requirements: fairseq and dependencies. 
+Requirements: fairseq 0.9.0 and dependencies. 
 Important note: Make sure to clone fairseq and install using `pip install -e`. Then in your fairseq install, modify the line `transformer.py:709` to the following: 
 
 `self.embed_positions.weights[prev_output_tokens.shape[1] + 1 - (prev_output_tokens.cumsum(dim=1) == 0).sum(dim=1)].unsqueeze(1)`
