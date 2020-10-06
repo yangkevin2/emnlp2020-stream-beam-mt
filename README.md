@@ -1,6 +1,6 @@
 # A Streaming Approach For Efficient Batched Beam Search
 
-This repo contains an implementation of the main machine translation experiments for the EMNLP 2020 paper "A Streaming Approach For Efficient Batched Beam Search" by Kevin Yang, Violet Yao, John DeNero, and Dan Klein, (TODO link). For the code for semantic and syntactic parsing experiments see https://github.com/yangkevin2/emnlp2020-stream-beam-semantic and https://github.com/yangkevin2/emnlp2020-stream-beam-syntactic. 
+This repo contains an implementation of the main machine translation experiments for the EMNLP 2020 paper "A Streaming Approach For Efficient Batched Beam Search" by Kevin Yang, Violet Yao, John DeNero, and Dan Klein (https://arxiv.org/abs/2010.02164). For the code for semantic and syntactic parsing experiments see https://github.com/yangkevin2/emnlp2020-stream-beam-semantic and https://github.com/yangkevin2/emnlp2020-stream-beam-syntactic. 
 
 Main implementation of variable-width beam searches is in `variable_stream.py`. 
 
