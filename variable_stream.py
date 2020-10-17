@@ -363,6 +363,9 @@ def variable_beam_stream_fast(sg, model, tokenized_sentences, k=5, max_length=10
                     master_done_beams[selected_master_indices[source_idx]].append( \
                             {'tokens': finished_cand.cpu(), 'score': (top_log_probs.flatten()[j] / ((finished_cand_length)**len_penalty)).item() })
                     best_finished_log_probs[source_idx] = max(best_finished_log_probs[source_idx], top_log_probs.flatten()[j])
+                else: # rarely with greedy search (beam size k = 1) you get stuff with length 0... so avoid crashing but give it low score
+                    master_done_beams[selected_master_indices[source_idx]].append( \
+                            {'tokens': finished_cand.cpu(), 'score': -1e8 })
 
         # then, shift log_probs and beam_indices for those beams and delete that beam(s); put in placeholder beam and log_prob at the k^th position
         # need to shift top_log_probs, beam_indices, vocab_indices accordingly
